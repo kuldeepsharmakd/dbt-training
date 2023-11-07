@@ -16,7 +16,8 @@ c.COUNTRY,
 p.PRODUCTID,
 p.CATEGORY,
 p.PRODUCTNAME,
-p.SUBCATEGORY
+p.SUBCATEGORY,
+{{ markup() }} as mk
 from
 {{ ref('raw_orders') }} as o
 left join {{ ref('raw_customer') }} as c

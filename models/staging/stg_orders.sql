@@ -1,5 +1,6 @@
 select 
 -- from raw order
+{{ dbt_utils.generate_surrogate_key(['o.ORDERID', 'p.PRODUCTID','c.CUSTOMERID']) }} as sk_orders,
 o.ORDERID,
 o.ORDERDATE,
 o.SHIPDATE,
